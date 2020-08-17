@@ -1,0 +1,287 @@
+{
+  "version": "tree-0.1",
+  "tree": {
+    "id": "App",
+    "path": "",
+    "children": {
+      "Tree": {
+        "id": "Tree",
+        "path": "Tree"
+      },
+      "argo-services": {
+        "id": "argo-services",
+        "path": "argo-services",
+        "children": {
+          "tryservice": {
+            "id": "tryservice",
+            "path": "argo-services/tryservice",
+            "children": {
+              "TaskRole": {
+                "id": "TaskRole",
+                "path": "argo-services/tryservice/TaskRole",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "argo-services/tryservice/TaskRole/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::IAM::Role",
+                      "aws:cdk:cloudformation:props": {
+                        "assumeRolePolicyDocument": {
+                          "Statement": [
+                            {
+                              "Action": "sts:AssumeRole",
+                              "Effect": "Allow",
+                              "Principal": {
+                                "Service": "ecs-tasks.amazonaws.com"
+                              }
+                            }
+                          ],
+                          "Version": "2012-10-17"
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "Resource": {
+                "id": "Resource",
+                "path": "argo-services/tryservice/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::ECS::TaskDefinition",
+                  "aws:cdk:cloudformation:props": {
+                    "containerDefinitions": [
+                      {
+                        "essential": true,
+                        "image": "amazon/amazon-ecs-sample",
+                        "name": "WebContainer",
+                        "portMappings": [
+                          {
+                            "containerPort": 80,
+                            "protocol": "tcp"
+                          }
+                        ]
+                      }
+                    ],
+                    "cpu": "256",
+                    "family": "argoservicestryservice66F175C7",
+                    "memory": "512",
+                    "networkMode": "awsvpc",
+                    "requiresCompatibilities": [
+                      "FARGATE"
+                    ],
+                    "taskRoleArn": {
+                      "Fn::GetAtt": [
+                        "tryserviceTaskRole4EDD34F9",
+                        "Arn"
+                      ]
+                    }
+                  }
+                }
+              },
+              "WebContainer": {
+                "id": "WebContainer",
+                "path": "argo-services/tryservice/WebContainer"
+              }
+            }
+          },
+          "ecs-vpc": {
+            "id": "ecs-vpc",
+            "path": "argo-services/ecs-vpc",
+            "children": {
+              "PublicSubnet1": {
+                "id": "PublicSubnet1",
+                "path": "argo-services/ecs-vpc/PublicSubnet1"
+              },
+              "PublicSubnet2": {
+                "id": "PublicSubnet2",
+                "path": "argo-services/ecs-vpc/PublicSubnet2"
+              },
+              "PublicSubnet3": {
+                "id": "PublicSubnet3",
+                "path": "argo-services/ecs-vpc/PublicSubnet3"
+              },
+              "PrivateSubnet1": {
+                "id": "PrivateSubnet1",
+                "path": "argo-services/ecs-vpc/PrivateSubnet1"
+              },
+              "PrivateSubnet2": {
+                "id": "PrivateSubnet2",
+                "path": "argo-services/ecs-vpc/PrivateSubnet2"
+              },
+              "PrivateSubnet3": {
+                "id": "PrivateSubnet3",
+                "path": "argo-services/ecs-vpc/PrivateSubnet3"
+              }
+            }
+          },
+          "cluster": {
+            "id": "cluster",
+            "path": "argo-services/cluster"
+          },
+          "Service": {
+            "id": "Service",
+            "path": "argo-services/Service",
+            "children": {
+              "Service": {
+                "id": "Service",
+                "path": "argo-services/Service/Service",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::ECS::Service",
+                  "aws:cdk:cloudformation:props": {
+                    "cluster": "try",
+                    "deploymentConfiguration": {
+                      "maximumPercent": 200,
+                      "minimumHealthyPercent": 50
+                    },
+                    "desiredCount": 1,
+                    "enableEcsManagedTags": false,
+                    "healthCheckGracePeriodSeconds": 60,
+                    "launchType": "FARGATE",
+                    "loadBalancers": [
+                      {
+                        "targetGroupArn": {
+                          "Ref": "tg2DCFFD86"
+                        },
+                        "containerName": "WebContainer",
+                        "containerPort": 80
+                      }
+                    ],
+                    "networkConfiguration": {
+                      "awsvpcConfiguration": {
+                        "assignPublicIp": "DISABLED",
+                        "subnets": [
+                          "subnet-01a0959a3e2a2b7c1",
+                          "subnet-0d4a812d2a6351ca8",
+                          "subnet-010b5dfaca2faec4c"
+                        ],
+                        "securityGroups": [
+                          {
+                            "Fn::GetAtt": [
+                              "ServiceSecurityGroupC96ED6A7",
+                              "GroupId"
+                            ]
+                          }
+                        ]
+                      }
+                    },
+                    "taskDefinition": {
+                      "Ref": "tryservice82296136"
+                    }
+                  }
+                }
+              },
+              "SecurityGroup": {
+                "id": "SecurityGroup",
+                "path": "argo-services/Service/SecurityGroup",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "argo-services/Service/SecurityGroup/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::SecurityGroup",
+                      "aws:cdk:cloudformation:props": {
+                        "groupDescription": "argo-services/Service/SecurityGroup",
+                        "securityGroupEgress": [
+                          {
+                            "cidrIp": "0.0.0.0/0",
+                            "description": "Allow all outbound traffic by default",
+                            "ipProtocol": "-1"
+                          }
+                        ],
+                        "vpcId": "vpc-05390e1e390cd8f81"
+                      }
+                    }
+                  },
+                  "from argoservicesSecurityGroupF766AA29:80": {
+                    "id": "from argoservicesSecurityGroupF766AA29:80",
+                    "path": "argo-services/Service/SecurityGroup/from argoservicesSecurityGroupF766AA29:80",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::SecurityGroupIngress",
+                      "aws:cdk:cloudformation:props": {
+                        "ipProtocol": "tcp",
+                        "description": "Load balancer to target",
+                        "fromPort": 80,
+                        "groupId": {
+                          "Fn::GetAtt": [
+                            "ServiceSecurityGroupC96ED6A7",
+                            "GroupId"
+                          ]
+                        },
+                        "sourceSecurityGroupId": "sg-018c3eb117f9a1fea",
+                        "toPort": 80
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "ArgoListner": {
+            "id": "ArgoListner",
+            "path": "argo-services/ArgoListner",
+            "children": {
+              "tgid": {
+                "id": "tgid",
+                "path": "argo-services/ArgoListner/tgid",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "argo-services/ArgoListner/tgid/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::ElasticLoadBalancingV2::ListenerRule",
+                      "aws:cdk:cloudformation:props": {
+                        "actions": [
+                          {
+                            "type": "forward",
+                            "targetGroupArn": {
+                              "Ref": "tg2DCFFD86"
+                            }
+                          }
+                        ],
+                        "conditions": [
+                          {
+                            "field": "path-pattern",
+                            "values": [
+                              "/index"
+                            ]
+                          }
+                        ],
+                        "listenerArn": "arn:aws:elasticloadbalancing:us-east-1:541986371853:listener/app/trylb/d904ee464af786fe/ac846bb6f0d76e5c",
+                        "priority": 1
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "SecurityGroup": {
+            "id": "SecurityGroup",
+            "path": "argo-services/SecurityGroup"
+          },
+          "tg": {
+            "id": "tg",
+            "path": "argo-services/tg",
+            "children": {
+              "Resource": {
+                "id": "Resource",
+                "path": "argo-services/tg/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::ElasticLoadBalancingV2::TargetGroup",
+                  "aws:cdk:cloudformation:props": {
+                    "healthCheckPath": "/",
+                    "healthCheckPort": "80",
+                    "port": 80,
+                    "protocol": "HTTP",
+                    "targetType": "ip",
+                    "vpcId": "vpc-05390e1e390cd8f81"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

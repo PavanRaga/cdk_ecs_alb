@@ -1,0 +1,223 @@
+{
+  "version": "5.0.0",
+  "artifacts": {
+    "Tree": {
+      "type": "cdk:tree",
+      "properties": {
+        "file": "tree.json"
+      }
+    },
+    "argo-services": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://541986371853/us-east-1",
+      "properties": {
+        "templateFile": "argo-services.template.json"
+      },
+      "metadata": {
+        "/argo-services/tryservice/TaskRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "tryserviceTaskRole4EDD34F9",
+            "trace": [
+              "new Role (/tmp/jsii-kernel-Lci4GU/node_modules/@aws-cdk/aws-iam/lib/role.js:43:22)",
+              "new TaskDefinition (/tmp/jsii-kernel-Lci4GU/node_modules/@aws-cdk/aws-ecs/lib/base/task-definition.js:66:43)",
+              "new FargateTaskDefinition (/tmp/jsii-kernel-Lci4GU/node_modules/@aws-cdk/aws-ecs/lib/fargate/fargate-task-definition.js:19:9)",
+              "obj._wrapSandboxCode (/home/ubuntu/iac/singlife-infra-code/argo-services/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7922:49)",
+              "Kernel._wrapSandboxCode (/home/ubuntu/iac/singlife-infra-code/argo-services/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8395:20)",
+              "Kernel._create (/home/ubuntu/iac/singlife-infra-code/argo-services/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7922:26)",
+              "Kernel.create (/home/ubuntu/iac/singlife-infra-code/argo-services/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7666:21)",
+              "KernelHost.processRequest (/home/ubuntu/iac/singlife-infra-code/argo-services/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7446:28)",
+              "KernelHost.run (/home/ubuntu/iac/singlife-infra-code/argo-services/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7384:14)",
+              "Immediate.setImmediate [as _onImmediate] (/home/ubuntu/iac/singlife-infra-code/argo-services/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7387:37)",
+              "runCallback (timers.js:705:18)",
+              "tryOnImmediate (timers.js:676:5)",
+              "processImmediate (timers.js:658:5)"
+            ]
+          }
+        ],
+        "/argo-services/tryservice/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "tryservice82296136",
+            "trace": [
+              "new TaskDefinition (/tmp/jsii-kernel-Lci4GU/node_modules/@aws-cdk/aws-ecs/lib/base/task-definition.js:69:25)",
+              "new FargateTaskDefinition (/tmp/jsii-kernel-Lci4GU/node_modules/@aws-cdk/aws-ecs/lib/fargate/fargate-task-definition.js:19:9)",
+              "obj._wrapSandboxCode (/home/ubuntu/iac/singlife-infra-code/argo-services/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7922:49)",
+              "Kernel._wrapSandboxCode (/home/ubuntu/iac/singlife-infra-code/argo-services/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8395:20)",
+              "Kernel._create (/home/ubuntu/iac/singlife-infra-code/argo-services/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7922:26)",
+              "Kernel.create (/home/ubuntu/iac/singlife-infra-code/argo-services/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7666:21)",
+              "KernelHost.processRequest (/home/ubuntu/iac/singlife-infra-code/argo-services/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7446:28)",
+              "KernelHost.run (/home/ubuntu/iac/singlife-infra-code/argo-services/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7384:14)",
+              "Immediate.setImmediate [as _onImmediate] (/home/ubuntu/iac/singlife-infra-code/argo-services/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7387:37)",
+              "runCallback (timers.js:705:18)",
+              "tryOnImmediate (timers.js:676:5)",
+              "processImmediate (timers.js:658:5)"
+            ]
+          }
+        ],
+        "/argo-services/Service/Service": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ServiceD69D759B",
+            "trace": [
+              "new BaseService (/tmp/jsii-kernel-Lci4GU/node_modules/@aws-cdk/aws-ecs/lib/base/base-service.js:112:25)",
+              "new FargateService (/tmp/jsii-kernel-Lci4GU/node_modules/@aws-cdk/aws-ecs/lib/fargate/fargate-service.js:48:9)",
+              "obj._wrapSandboxCode (/home/ubuntu/iac/singlife-infra-code/argo-services/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7922:49)",
+              "Kernel._wrapSandboxCode (/home/ubuntu/iac/singlife-infra-code/argo-services/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8395:20)",
+              "Kernel._create (/home/ubuntu/iac/singlife-infra-code/argo-services/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7922:26)",
+              "Kernel.create (/home/ubuntu/iac/singlife-infra-code/argo-services/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7666:21)",
+              "KernelHost.processRequest (/home/ubuntu/iac/singlife-infra-code/argo-services/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7446:28)",
+              "KernelHost.run (/home/ubuntu/iac/singlife-infra-code/argo-services/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7384:14)",
+              "Immediate.setImmediate [as _onImmediate] (/home/ubuntu/iac/singlife-infra-code/argo-services/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7387:37)",
+              "runCallback (timers.js:705:18)",
+              "tryOnImmediate (timers.js:676:5)",
+              "processImmediate (timers.js:658:5)"
+            ]
+          }
+        ],
+        "/argo-services/Service/SecurityGroup/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ServiceSecurityGroupC96ED6A7",
+            "trace": [
+              "new SecurityGroup (/tmp/jsii-kernel-Lci4GU/node_modules/@aws-cdk/aws-ec2/lib/security-group.js:174:30)",
+              "FargateService.configureAwsVpcNetworkingWithSecurityGroups (/tmp/jsii-kernel-Lci4GU/node_modules/@aws-cdk/aws-ecs/lib/base/base-service.js:366:31)",
+              "new FargateService (/tmp/jsii-kernel-Lci4GU/node_modules/@aws-cdk/aws-ecs/lib/fargate/fargate-service.js:66:14)",
+              "obj._wrapSandboxCode (/home/ubuntu/iac/singlife-infra-code/argo-services/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7922:49)",
+              "Kernel._wrapSandboxCode (/home/ubuntu/iac/singlife-infra-code/argo-services/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8395:20)",
+              "Kernel._create (/home/ubuntu/iac/singlife-infra-code/argo-services/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7922:26)",
+              "Kernel.create (/home/ubuntu/iac/singlife-infra-code/argo-services/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7666:21)",
+              "KernelHost.processRequest (/home/ubuntu/iac/singlife-infra-code/argo-services/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7446:28)",
+              "KernelHost.run (/home/ubuntu/iac/singlife-infra-code/argo-services/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7384:14)",
+              "Immediate.setImmediate [as _onImmediate] (/home/ubuntu/iac/singlife-infra-code/argo-services/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7387:37)",
+              "runCallback (timers.js:705:18)",
+              "tryOnImmediate (timers.js:676:5)",
+              "processImmediate (timers.js:658:5)"
+            ]
+          }
+        ],
+        "/argo-services/Service/SecurityGroup/from argoservicesSecurityGroupF766AA29:80": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ServiceSecurityGroupfromargoservicesSecurityGroupF766AA29802D7936E8",
+            "trace": [
+              "SecurityGroup.addIngressRule (/tmp/jsii-kernel-Lci4GU/node_modules/@aws-cdk/aws-ec2/lib/security-group.js:34:13)",
+              "SecurityGroup.addIngressRule (/tmp/jsii-kernel-Lci4GU/node_modules/@aws-cdk/aws-ec2/lib/security-group.js:224:19)",
+              "other.connections._securityGroupRules.forEachAndForever.rule (/tmp/jsii-kernel-Lci4GU/node_modules/@aws-cdk/aws-ec2/lib/connections.js:90:31)",
+              "ReactiveList.forEachAndForever (/tmp/jsii-kernel-Lci4GU/node_modules/@aws-cdk/aws-ec2/lib/connections.js:192:13)",
+              "_securityGroups.forEachAndForever.securityGroup (/tmp/jsii-kernel-Lci4GU/node_modules/@aws-cdk/aws-ec2/lib/connections.js:89:51)",
+              "ReactiveList.forEachAndForever (/tmp/jsii-kernel-Lci4GU/node_modules/@aws-cdk/aws-ec2/lib/connections.js:192:13)",
+              "Connections.allowFrom (/tmp/jsii-kernel-Lci4GU/node_modules/@aws-cdk/aws-ec2/lib/connections.js:88:30)",
+              "Connections.allowTo (/tmp/jsii-kernel-Lci4GU/node_modules/@aws-cdk/aws-ec2/lib/connections.js:73:31)",
+              "ImportedApplicationListener.registerConnectable (/tmp/jsii-kernel-Lci4GU/node_modules/@aws-cdk/aws-elasticloadbalancingv2/lib/alb/application-listener.js:370:26)",
+              "ApplicationTargetGroup.registerListener (/tmp/jsii-kernel-Lci4GU/node_modules/@aws-cdk/aws-elasticloadbalancingv2/lib/alb/application-target-group.js:88:22)",
+              "TargetGroupListenerAction.bind (/tmp/jsii-kernel-Lci4GU/node_modules/@aws-cdk/aws-elasticloadbalancingv2/lib/alb/application-listener-action.js:217:16)",
+              "ApplicationListenerRule.configureAction (/tmp/jsii-kernel-Lci4GU/node_modules/@aws-cdk/aws-elasticloadbalancingv2/lib/alb/application-listener-rule.js:103:16)",
+              "ApplicationListenerRule.addTargetGroup (/tmp/jsii-kernel-Lci4GU/node_modules/@aws-cdk/aws-elasticloadbalancingv2/lib/alb/application-listener-rule.js:112:14)",
+              "Array.forEach (<anonymous>)",
+              "new ApplicationListenerRule (/tmp/jsii-kernel-Lci4GU/node_modules/@aws-cdk/aws-elasticloadbalancingv2/lib/alb/application-listener-rule.js:58:36)",
+              "ImportedApplicationListener.addTargetGroups (/tmp/jsii-kernel-Lci4GU/node_modules/@aws-cdk/aws-elasticloadbalancingv2/lib/alb/application-listener.js:336:13)",
+              "_wrapSandboxCode (/home/ubuntu/iac/singlife-infra-code/argo-services/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7746:51)",
+              "Kernel._wrapSandboxCode (/home/ubuntu/iac/singlife-infra-code/argo-services/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8395:20)",
+              "ret._ensureSync (/home/ubuntu/iac/singlife-infra-code/argo-services/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7746:25)",
+              "Kernel._ensureSync (/home/ubuntu/iac/singlife-infra-code/argo-services/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8371:20)",
+              "Kernel.invoke (/home/ubuntu/iac/singlife-infra-code/argo-services/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7745:26)",
+              "KernelHost.processRequest (/home/ubuntu/iac/singlife-infra-code/argo-services/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7446:28)",
+              "KernelHost.run (/home/ubuntu/iac/singlife-infra-code/argo-services/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7384:14)",
+              "Immediate.setImmediate [as _onImmediate] (/home/ubuntu/iac/singlife-infra-code/argo-services/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7387:37)",
+              "runCallback (timers.js:705:18)",
+              "tryOnImmediate (timers.js:676:5)",
+              "processImmediate (timers.js:658:5)"
+            ]
+          }
+        ],
+        "/argo-services/ArgoListner/tgid/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ArgoListnertgid8CC9FF72",
+            "trace": [
+              "new ApplicationListenerRule (/tmp/jsii-kernel-Lci4GU/node_modules/@aws-cdk/aws-elasticloadbalancingv2/lib/alb/application-listener-rule.js:39:26)",
+              "ImportedApplicationListener.addTargetGroups (/tmp/jsii-kernel-Lci4GU/node_modules/@aws-cdk/aws-elasticloadbalancingv2/lib/alb/application-listener.js:336:13)",
+              "_wrapSandboxCode (/home/ubuntu/iac/singlife-infra-code/argo-services/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7746:51)",
+              "Kernel._wrapSandboxCode (/home/ubuntu/iac/singlife-infra-code/argo-services/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8395:20)",
+              "ret._ensureSync (/home/ubuntu/iac/singlife-infra-code/argo-services/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7746:25)",
+              "Kernel._ensureSync (/home/ubuntu/iac/singlife-infra-code/argo-services/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8371:20)",
+              "Kernel.invoke (/home/ubuntu/iac/singlife-infra-code/argo-services/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7745:26)",
+              "KernelHost.processRequest (/home/ubuntu/iac/singlife-infra-code/argo-services/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7446:28)",
+              "KernelHost.run (/home/ubuntu/iac/singlife-infra-code/argo-services/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7384:14)",
+              "Immediate.setImmediate [as _onImmediate] (/home/ubuntu/iac/singlife-infra-code/argo-services/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7387:37)",
+              "runCallback (timers.js:705:18)",
+              "tryOnImmediate (timers.js:676:5)",
+              "processImmediate (timers.js:658:5)"
+            ]
+          }
+        ],
+        "/argo-services/tg/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "tg2DCFFD86",
+            "trace": [
+              "new TargetGroupBase (/tmp/jsii-kernel-Lci4GU/node_modules/@aws-cdk/aws-elasticloadbalancingv2/lib/shared/base-target-group.js:32:25)",
+              "new ApplicationTargetGroup (/tmp/jsii-kernel-Lci4GU/node_modules/@aws-cdk/aws-elasticloadbalancingv2/lib/alb/application-target-group.js:16:9)",
+              "obj._wrapSandboxCode (/home/ubuntu/iac/singlife-infra-code/argo-services/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7922:49)",
+              "Kernel._wrapSandboxCode (/home/ubuntu/iac/singlife-infra-code/argo-services/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8395:20)",
+              "Kernel._create (/home/ubuntu/iac/singlife-infra-code/argo-services/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7922:26)",
+              "Kernel.create (/home/ubuntu/iac/singlife-infra-code/argo-services/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7666:21)",
+              "KernelHost.processRequest (/home/ubuntu/iac/singlife-infra-code/argo-services/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7446:28)",
+              "KernelHost.run (/home/ubuntu/iac/singlife-infra-code/argo-services/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7384:14)",
+              "Immediate.setImmediate [as _onImmediate] (/home/ubuntu/iac/singlife-infra-code/argo-services/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7387:37)",
+              "runCallback (timers.js:705:18)",
+              "tryOnImmediate (timers.js:676:5)",
+              "processImmediate (timers.js:658:5)"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "runtime": {
+    "libraries": {
+      "@aws-cdk/cloud-assembly-schema": "1.59.0",
+      "@aws-cdk/cx-api": "1.59.0",
+      "@aws-cdk/core": "1.59.0",
+      "@aws-cdk/region-info": "1.59.0",
+      "@aws-cdk/aws-iam": "1.59.0",
+      "@aws-cdk/aws-autoscaling-common": "1.59.0",
+      "@aws-cdk/aws-cloudwatch": "1.59.0",
+      "@aws-cdk/aws-applicationautoscaling": "1.59.0",
+      "@aws-cdk/assets": "1.59.0",
+      "@aws-cdk/aws-kms": "1.59.0",
+      "@aws-cdk/aws-logs": "1.59.0",
+      "@aws-cdk/aws-events": "1.59.0",
+      "@aws-cdk/aws-s3": "1.59.0",
+      "@aws-cdk/aws-s3-assets": "1.59.0",
+      "@aws-cdk/aws-ssm": "1.59.0",
+      "@aws-cdk/aws-ec2": "1.59.0",
+      "@aws-cdk/aws-elasticloadbalancing": "1.59.0",
+      "@aws-cdk/aws-codeguruprofiler": "1.59.0",
+      "@aws-cdk/aws-efs": "1.59.0",
+      "@aws-cdk/aws-sqs": "1.59.0",
+      "@aws-cdk/aws-lambda": "1.59.0",
+      "@aws-cdk/aws-route53": "1.59.0",
+      "@aws-cdk/aws-certificatemanager": "1.59.0",
+      "@aws-cdk/aws-elasticloadbalancingv2": "1.59.0",
+      "@aws-cdk/aws-sns": "1.59.0",
+      "@aws-cdk/aws-autoscaling": "1.59.0",
+      "@aws-cdk/aws-sns-subscriptions": "1.59.0",
+      "@aws-cdk/aws-autoscaling-hooktargets": "1.59.0",
+      "@aws-cdk/aws-cloudformation": "1.59.0",
+      "@aws-cdk/custom-resources": "1.59.0",
+      "@aws-cdk/aws-ecr": "1.59.0",
+      "@aws-cdk/aws-ecr-assets": "1.59.0",
+      "@aws-cdk/aws-apigateway": "1.59.0",
+      "@aws-cdk/aws-cloudfront": "1.59.0",
+      "@aws-cdk/aws-cognito": "1.59.0",
+      "@aws-cdk/aws-route53-targets": "1.59.0",
+      "@aws-cdk/aws-sam": "1.59.0",
+      "@aws-cdk/aws-secretsmanager": "1.59.0",
+      "@aws-cdk/aws-servicediscovery": "1.59.0",
+      "@aws-cdk/aws-ecs": "1.59.0",
+      "jsii-runtime": "Python/3.8.2"
+    }
+  }
+}

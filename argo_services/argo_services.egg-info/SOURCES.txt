@@ -1,0 +1,7 @@
+README.md
+setup.py
+argo_services/argo_services.egg-info/PKG-INFO
+argo_services/argo_services.egg-info/SOURCES.txt
+argo_services/argo_services.egg-info/dependency_links.txt
+argo_services/argo_services.egg-info/requires.txt
+argo_services/argo_services.egg-info/top_level.txt
